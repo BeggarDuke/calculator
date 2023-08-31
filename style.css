@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main {
+margin: 3em;
+padding: 0.5em 1em 1em 1em;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: silver;
+border-radius: 5%;
+border: 0.2em solid black;
+min-width: 260px;
+max-width: 260px;
+}
+#buttons-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+#body-one {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-template-rows: repeat(4, 50px);
+  gap: 0.1em;
+}
+
+#body-two {
+  display: grid;
+  grid-template-columns: repeat(2, 50px);
+  grid-template-rows: repeat(4, 50px);
+  grid-auto-flow: column;
+  gap: 0.1em;
+}
+
+#all-clear {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#monitor {
+  height: 50px;
+  width: 260px;
+  margin: 0.5em;
+  background-color: rgb(225, 230, 230);
+  border-radius: 0.5em;
+  border: 0.1em solid black;
+}
+
+button {
+  border-radius: 0.5em;
+  border: 0.2em solid black;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+}
