@@ -41,13 +41,22 @@ max-width: 260px;
   grid-column-end: 3;
 }
 
-#monitor {
+#display {
   height: 50px;
   width: 260px;
   margin: 0.5em;
   background-color: rgb(225, 230, 230);
   border-radius: 0.5em;
   border: 0.1em solid black;
+  text-align: end;
+}
+
+#display div {
+  margin: 0.1em;
+}
+
+#display :last-child {
+  font-size: 1.5em;
 }
 
 button {
