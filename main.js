@@ -1,19 +1,18 @@
 const buttons = document.querySelectorAll("button");
 let displayMain = document.querySelector("#display :last-child");
 let displaySub = document.querySelector("#display :first-child");
-let operatorIsLast = false;
 buttons.forEach((e) => {
   e.addEventListener("click", () => {
     if (e.getAttribute("class") === "number") {
-      !operatorIsLast
+      displayMain.innerText.split(" ").length < 2
         ? (displayMain.innerText += e.innerText)
-        : (displayMain.innerText += ` ${e.innerText}`);
-      operatorIsLast = false;
+        : displayMain.innerText.split(" ").length === 2 
+        ? (displayMain.innerText += ` ${e.innerText}`)
+        : (displayMain.innerText += e.innerText);
     }
     if (e.getAttribute("class") === "math-operators") {
-      if (operatorIsLast || displayMain.innerText === "" || displayMain.innerText.split(" ").length === 3) return;
+      if (displayMain.innerText === "" || displayMain.innerText.split(" ").length >= 2) return;
       displayMain.innerText += ` ${e.innerText}`;
-      operatorIsLast = true;
     }
     if (e.getAttribute("id") === "equal-button") {
       const arr = displayMain.innerText.split(" ");
@@ -23,7 +22,6 @@ buttons.forEach((e) => {
     if (e.getAttribute("id") === "all-clear") {
       displayMain.innerText = "";
       displaySub.innerText = "";
-      operatorIsLast = false;
     }
     if (e.getAttribute("id") === "clear"){
       let arr = displayMain.innerText.split("");
