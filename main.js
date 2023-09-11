@@ -38,7 +38,7 @@ buttons.forEach((e) => {
             +arr[operator - 1],
             +arr[operator + 1]
           );
-          arr.splice(operator - 1, 3, result);
+          arr.splice(operator - 1, 3, Math.round(result * 1000) / 1000);
         }
       }
       displaySub.innerText = displayMain.innerText;
